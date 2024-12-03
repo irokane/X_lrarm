@@ -1,0 +1,11 @@
+<!-- accounts/templates/accounts/task_form.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2>{% if task %}タスク編集{% else %}新規タスク作成{% endif %}</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">保存</button>
+</form>
+{% endblock %}
